@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This README provides instructions for setting up and running the backend of the Pokemon Battle project. It includes details on system requirements, installation, execution, and the solution process.
+This README provides instructions for setting up and running the backend and fronted of the Pokemon Battle project. It includes details on system requirements, installation, execution, and the solution process.
 
 ## System Requirements
 
