@@ -45,7 +45,8 @@ PokemonBattleCard.propTypes = {
 export const BattleContainer = ({
   selectedPokemon,
   computerPokemon,
-  onStartBattleClick
+  onStartBattleClick,
+  winner
 }) => {
   const theme = useTheme();
   return (
@@ -72,6 +73,7 @@ export const BattleContainer = ({
             }
           }}
           onClick={onStartBattleClick}
+          disabled={winner}
         >
           Start Battle
         </Button>
@@ -86,5 +88,6 @@ export const BattleContainer = ({
 BattleContainer.propTypes = {
   selectedPokemon: PropTypes.object.isRequired,
   computerPokemon: PropTypes.object.isRequired,
-  onStartBattleClick: PropTypes.func
+  onStartBattleClick: PropTypes.func,
+  winner: PropTypes.object
 };

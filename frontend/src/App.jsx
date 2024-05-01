@@ -36,6 +36,7 @@ function App() {
             selectedPokemon={selectedPokemon}
             computerPokemon={computerPokemon}
             onStartBattleClick={onStartBattleClick}
+            winner={winner}
           />
         )}
       </Box>
