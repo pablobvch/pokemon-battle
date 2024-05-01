@@ -14,7 +14,10 @@ import { PokemonService } from './pokemon/pokemon.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({ ...dataSourceOptions, synchronize: true }),
+    TypeOrmModule.forRoot({
+      ...dataSourceOptions,
+      synchronize: true,
+    }),
     TypeOrmModule.forFeature([Pokemon]),
     TypeOrmModule.forFeature([Battle]),
     PokemonModule,
