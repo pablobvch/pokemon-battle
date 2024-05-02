@@ -48,7 +48,10 @@ For battle calculation, consider the following:
 - React
 - MaterialUI
 
-## Installation and Execution - Backend
+## Installation and Execution - Backend and Frontend
+
+This project is a monorepo, so you will get both folders in the same project.
+Following the instruction to get ready the Pokemon's battle app working:
 
 1. Clone this repository:
 
@@ -56,7 +59,7 @@ For battle calculation, consider the following:
 git clone https://github.com/pablobvch/pokemon-battle.git
 ```
 
-2. Within the backend folder, install dependencies:
+2. Within every folder, frontend and backend, install dependencies:
 
 ```bash
 npm install
@@ -68,7 +71,21 @@ npm install
 npm run start:dev
 ```
 
-4. Access the API at `http://localhost:3000`
+4. Start the client:
+
+```bash
+npm run dev
+```
+
+5. Access the API at `http://localhost:3000` and the Frontend at `http://localhost:5173`
+
+## Run tests
+
+You can run the test such Frontend as basckend using the command
+
+```bash
+npm run test
+```
 
 ## Solution Process and Rationale
 
