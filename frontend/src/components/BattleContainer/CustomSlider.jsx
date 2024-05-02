@@ -1,12 +1,20 @@
-import Slider from "@mui/material/Slider";
 import { useTheme } from "@emotion/react";
+import PropTypes from "prop-types";
+import Slider from "@mui/material/Slider";
 
-export const CustomSlider = () => {
+const MIN = 0;
+
+const MAX = 6;
+
+export const CustomSlider = ({ value }) => {
   const theme = useTheme();
 
   return (
     <Slider
-      defaultValue={30}
+      min={MIN}
+      max={MAX}
+      value={value}
+      disabled
       sx={{
         "& .MuiSlider-thumb": {
           width: "0px",
@@ -24,4 +32,8 @@ export const CustomSlider = () => {
       }}
     />
   );
+};
+
+CustomSlider.propTypes = {
+  value: PropTypes.number
 };
