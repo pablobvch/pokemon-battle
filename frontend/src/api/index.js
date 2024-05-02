@@ -14,11 +14,8 @@ export const getAllPokemons = async () => {
 
 export const startBattle = async (pokemon1Id, pokemon2Id) => {
   try {
-    console.log("starting battle");
     const url = `${VITE_API_URL}/battle`;
-    console.log({ url });
     const { data } = await axios.post(url, { pokemon1Id, pokemon2Id });
-    console.log({ winner: data });
     return data;
   } catch (error) {
     console.log("Error by starting battle", error);

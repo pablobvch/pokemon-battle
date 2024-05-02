@@ -1,46 +1,7 @@
 import { useTheme } from "@emotion/react";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Divider,
-  Grid,
-  Typography
-} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import PropTypes from "prop-types";
-
-const PokemonBattleCard = ({ pokemon }) => (
-  <Card
-    sx={{
-      borderRadius: "6px",
-      border: "1px solid #e5e7eb",
-      boxShadow: "-3px 3px 10px rgba(0, 0, 0, 0.3)"
-    }}
-  >
-    <CardContent>
-      <CardMedia
-        component="img"
-        alt={pokemon.name}
-        image={`${pokemon.imageUrl}`}
-        sx={{
-          width: "100%",
-          height: "auto"
-        }}
-      />
-      <Typography variant="h6">{pokemon.name}</Typography>
-      <Divider></Divider>
-      <Typography variant="body1">HP</Typography>
-      <Typography variant="body1">Attack</Typography>
-      <Typography variant="body1">Defense</Typography>
-      <Typography variant="body1">Speed</Typography>
-    </CardContent>
-  </Card>
-);
-
-PokemonBattleCard.propTypes = {
-  pokemon: PropTypes.object.isRequired
-};
+import { PokemonBattleCard } from "./PokemonBattleCard";
 
 export const BattleContainer = ({
   selectedPokemon,
@@ -67,13 +28,14 @@ export const BattleContainer = ({
           variant="contained"
           sx={{
             textTransform: "capitalize",
-            backgroundColor: theme.palette.buttonBackground,
+            backgroundColor: theme.palette.button.backgroundColor.primary,
             "&:hover": {
-              backgroundColor: theme.palette.darkButtonBackground
-            }
+              backgroundColor: theme.palette.button.backgroundColor.secondary
+            },
+            boxShadow: "0px 5px 3px rgba(0, 0, 0, 0.3)"
           }}
           onClick={onStartBattleClick}
-          disabled={winner}
+          disabled={!!winner}
         >
           Start Battle
         </Button>

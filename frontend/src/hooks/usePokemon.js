@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { getAllPokemons } from "../api";
 
 const getRandomIndex = (maxIndex, excludeIndex) => {

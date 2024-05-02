@@ -40,13 +40,17 @@ PokemonListCard.propTypes = {
 
 export function CardsList({ pokemons, onCardClick }) {
   if (!pokemons) {
-    return <CircularProgress />;
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <CircularProgress />
+      </Box>
+    );
   }
 
   return (
     <Box mt={4}>
       <Box mb={2}>
-        <Typography variant="h6">Select your pokemon</Typography>
+        <Typography variant="h5">Select your pokemon</Typography>
       </Box>
       <Grid container justifyContent="space-between" spacing={2}>
         {pokemons.map((pokemon) => (

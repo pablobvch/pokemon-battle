@@ -1,10 +1,43 @@
 import { useState } from "react";
 import { Box, ThemeProvider } from "@mui/material";
+import PropTypes from "prop-types";
 
 import { CardsList, Title, WinnerMessage, BattleContainer } from "./components";
+import { startBattle } from "./api";
 import { usePokemon } from "./hooks/usePokemon";
 import theme from "./theme";
-import { startBattle } from "./api";
+
+const AppContent = ({
+  pokemons,
+  onCardClick,
+  winner,
+  selectedPokemon,
+  computerPokemon,
+  onStartBattleClick
+}) => (
+  <Box sx={{ padding: "20px 40px" }}>
+    <Title />
+    <CardsList pokemons={pokemons} onCardClick={onCardClick} />
+    {winner ? <WinnerMessage name={winner.name} /> : <Box mt={5} />}
+    {selectedPokemon && computerPokemon && (
+      <BattleContainer
+        selectedPokemon={selectedPokemon}
+        computerPokemon={computerPokemon}
+        onStartBattleClick={onStartBattleClick}
+        winner={winner}
+      />
+    )}
+  </Box>
+);
+
+AppContent.propTypes = {
+  pokemons: PropTypes.arrayOf(PropTypes.object),
+  onCardClick: PropTypes.func,
+  winner: PropTypes.object,
+  selectedPokemon: PropTypes.object,
+  computerPokemon: PropTypes.object,
+  onStartBattleClick: PropTypes.func
+};
 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
@@ -26,20 +59,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ padding: "10px 20px" }}>
-        <Title />
-        <CardsList pokemons={pokemons} onCardClick={onCardClick} />
-        {!winner && <Box mt={5} />}
-        {winner && <WinnerMessage name={winner.name} />}
-        {selectedPokemon && computerPokemon && (
-          <BattleContainer
-            selectedPokemon={selectedPokemon}
-            computerPokemon={computerPokemon}
-            onStartBattleClick={onStartBattleClick}
-            winner={winner}
-          />
-        )}
-      </Box>
+      <AppContent
+        {...{
+          pokemons,
+          onCardClick,
+          winner,
+          selectedPokemon,
+          computerPokemon,
+          onStartBattleClick
+        }}
+      />
     </ThemeProvider>
   );
 }
