@@ -71,17 +71,25 @@ npm install
 npm run start:dev
 ```
 
-4. Start the client:
+Once you run the server the database is created based on the entities definitions, so you have to run the following command in other console to populate the data with the migration
+
+4. run typeorm migrations
+
+```bash
+npm run typeorm
+```
+
+5. Start the client:
 
 ```bash
 npm run dev
 ```
 
-5. Access the API at `http://localhost:3000` and the Frontend at `http://localhost:5173`
+6. Access the API at `http://localhost:3000` and the Frontend at `http://localhost:5173`
 
 ## Run tests
 
-You can run the test such Frontend as basckend using the command
+You can run the test such Frontend as Basckend using the following command
 
 ```bash
 npm run test
@@ -91,4 +99,5 @@ npm run test
 
 - **Database Setup:** SQLite is used as the database system for simplicity and ease of setup. TypeORM is used as the ORM to interact with the database.
 - **API Endpoints:** The backend provides 2 endpoints for getting Pokemon data, and conducting battles saving their results afterwards.
-- **Error Handling:** The backend has some basic validations before running the battles. ???????? pasar a middleware
+- **Error Handling:** The backend has some basic validations before running the battles.
+- **Test Setup:** Besides the default tests from NestJS, I've included supplementary tests for the frontend to demonstrate my testing expertise. Initially, I faced challenges with the default test setup in NestJS. Nonetheless, I managed to reconfigure the environment to ensure smooth execution of them.
