@@ -13,7 +13,9 @@ import { PokemonImage } from "./PokemonImage";
 const PokemonListCard = ({ pokemon, onCardClick }) => (
   <BaseCard onCardClick={onCardClick} pokemon={pokemon}>
     <CardActionArea>
-      <PokemonImage name={pokemon.name} imageUrl={pokemon.imageUrl} />
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <PokemonImage name={pokemon.name} imageUrl={pokemon.imageUrl} />
+      </Box>
       <Typography paddingLeft={1}>{pokemon.name}</Typography>
     </CardActionArea>
   </BaseCard>

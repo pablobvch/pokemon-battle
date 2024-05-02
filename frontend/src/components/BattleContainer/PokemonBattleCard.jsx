@@ -1,4 +1,4 @@
-import { CardContent, Divider, Typography } from "@mui/material";
+import { CardContent, Divider, Typography, Box } from "@mui/material";
 import PropTypes from "prop-types";
 
 import { BaseCard } from "../BaseCard";
@@ -11,7 +11,9 @@ export const PokemonBattleCard = ({
   return (
     <BaseCard>
       <CardContent>
-        <PokemonImage name={name} imageUrl={imageUrl} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <PokemonImage name={name} imageUrl={imageUrl} />
+        </Box>
         <Typography variant="h6">{name}</Typography>
         <Divider />
         <Typography variant="body1">HP</Typography>

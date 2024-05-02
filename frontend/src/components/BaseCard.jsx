@@ -24,5 +24,6 @@ export const BaseCard = ({ pokemon, onCardClick, children }) => {
 BaseCard.propTypes = {
   pokemon: PropTypes.object,
   onCardClick: PropTypes.func,
-  children: PropTypes.object
+  children: PropTypes.object,
+  sx: PropTypes.object
 };

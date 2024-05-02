@@ -15,7 +15,7 @@ const AppContent = ({
   computerPokemon,
   onStartBattleClick
 }) => (
-  <Box sx={{ padding: "20px 40px" }}>
+  <Box sx={{ padding: "20px 80px" }}>
     <Title />
     <CardsList pokemons={pokemons} onCardClick={onCardClick} />
     {winner ? <WinnerMessage name={winner.name} /> : <Box mt={5} />}
