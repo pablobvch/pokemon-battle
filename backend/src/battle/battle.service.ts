@@ -21,6 +21,8 @@ export class BattleService {
     battle.pokemon1Id = pokemon1Id;
     battle.pokemon2Id = pokemon2Id;
     battle.winnerId = winnerId;
-    return this.battleRepository.save(battle);
+    const result = await this.battleRepository.save(battle);
+    console.log({ result });
+    return result;
   }
 }
