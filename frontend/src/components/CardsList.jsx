@@ -2,26 +2,18 @@ import PropTypes from "prop-types";
 import {
   Box,
   CardActionArea,
-  CardMedia,
   CircularProgress,
   Grid,
   Typography
 } from "@mui/material";
 
 import { BaseCard } from "./BaseCard";
+import { PokemonImage } from "./PokemonImage";
 
 const PokemonListCard = ({ pokemon, onCardClick }) => (
   <BaseCard onCardClick={onCardClick} pokemon={pokemon}>
     <CardActionArea>
-      <CardMedia
-        component="img"
-        alt={pokemon.name}
-        image={`${pokemon.imageUrl}`}
-        sx={{
-          width: "100%",
-          height: "auto"
-        }}
-      />
+      <PokemonImage name={pokemon.name} imageUrl={pokemon.imageUrl} />
       <Typography paddingLeft={1}>{pokemon.name}</Typography>
     </CardActionArea>
   </BaseCard>

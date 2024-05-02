@@ -1,8 +1,9 @@
-import { CardContent, CardMedia, Divider, Typography } from "@mui/material";
+import { CardContent, Divider, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
 import { BaseCard } from "../BaseCard";
 import { CustomSlider } from "./CustomSlider";
+import { PokemonImage } from "../PokemonImage";
 
 export const PokemonBattleCard = ({
   pokemon: { name, imageUrl, hp, attack, defense, speed }
@@ -10,15 +11,7 @@ export const PokemonBattleCard = ({
   return (
     <BaseCard>
       <CardContent>
-        <CardMedia
-          component="img"
-          alt={name}
-          image={`${imageUrl}`}
-          sx={{
-            width: "100%",
-            height: "auto"
-          }}
-        />
+        <PokemonImage name={name} imageUrl={imageUrl} />
         <Typography variant="h6">{name}</Typography>
         <Divider />
         <Typography variant="body1">HP</Typography>
