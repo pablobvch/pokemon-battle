@@ -85,7 +85,11 @@ npm run typeorm
 npm run dev
 ```
 
-6. Access the API at `http://localhost:3000` and the Frontend at `http://localhost:5173`
+8. Consider create an .env file as .env.template and set the value
+
+`VITE_API_URL=http://localhost:3000/pokemons`
+
+7. Access the API at `http://localhost:3000` and the Frontend at `http://localhost:5173`
 
 ## Run tests
 

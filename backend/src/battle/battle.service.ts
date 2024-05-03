@@ -16,11 +16,16 @@ export class BattleService {
     pokemon2Id: number,
     winnerId: number,
   ): Promise<Battle> {
-    const battle = new Battle();
-    battle.date = new Date();
-    battle.pokemon1Id = pokemon1Id;
-    battle.pokemon2Id = pokemon2Id;
-    battle.winnerId = winnerId;
-    return await this.battleRepository.save(battle);
+    try {
+      const battle = new Battle();
+      battle.date = new Date();
+      battle.pokemon1Id = pokemon1Id;
+      battle.pokemon2Id = pokemon2Id;
+      battle.winnerId = winnerId;
+      return await this.battleRepository.save(battle);
+    } catch (error) {
+      console.error('Error by creating the battle:', error);
+      throw new Error('Internal server error by creating the battle');
+    }
   }
 }
