@@ -102,6 +102,8 @@ npm run test
 ## Solution Process and Rationale
 
 - **Database Setup:** SQLite is used as the database system for simplicity and ease of setup. TypeORM is used as the ORM to interact with the database.
+  You can check the tables structures using a database viewer on the file database.sqlite
 - **API Endpoints:** The backend provides 2 endpoints for getting Pokemon data, and conducting battles saving their results afterwards.
-- **Error Handling:** The backend has some basic validations before running the battles.
-- **Test Setup:** Besides the default tests from NestJS, I've included supplementary tests for the frontend to demonstrate my testing expertise. Initially, I faced challenges with the default test setup in NestJS. Nonetheless, I managed to reconfigure the environment to ensure smooth execution of them.
+- **Error Handling:** The backend has some basic validations before running the battles. However, you can find a middleware used by adding some validations.
+- **Test Setup:** Besides the default tests from NestJS, I've included supplementary tests for the frontend in order to demonstrate my testing expertise. Initially, I faced challenges with the default test setup in NestJS. Nonetheless, I managed to reconfigure the environment to ensure smooth execution of them.
+- **Logging:** There are some errors in the console showing additional information in the case of unexpected errors happens. The rest of the backend validation errors are handling by the middleware.
